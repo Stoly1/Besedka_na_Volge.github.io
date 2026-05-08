@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16120d">
+<title>Беседка на Волге — площадка для мероприятий</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+    <source src="video/2026-05-06%2011.15.37.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-logo-3d">
+      <img src="images/logo.jpg" alt="Беседка на Волге" class="logo-fallback">
+      <canvas id="logo-canvas"></canvas>
+    </div>
+    <h1>Беседка на Волге</h1>
+    <p class="tagline">Приватное пространство на берегу Волги для событий, где важны уровень, эстетика и безупречная организация</p>
+    <span class="scroll-hint">смотреть дальше</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <p class="intro-text reveal">Локация объединяет природу и комфорт: вода, открытое пространство и полностью готовая инфраструктура для мероприятий любого формата.</p>
+    <div class="divider reveal"></div>
+    <p class="intro-text reveal" style="font-style: italic; color: var(--cream);">Площадка, где уровень чувствуется в деталях — от организации пространства до качества сервиса.</p>
+  </div>
+</section>
+
+<!-- 3D ATMOSPHERE -->
+<section class="atmosphere">
+  <canvas id="three-canvas"></canvas>
+  <div class="atmosphere-text reveal">
+    <h2>Атмосфера, которая запоминается</h2>
+    <p>Тёплый свет гирлянд, вода рядом, приятный воздух — вечер, в котором хочется остаться.</p>
+  </div>
+</section>
+
+<!-- SPACES -->
+<section class="spaces" id="spaces">
+  <div class="container">
+    <span class="section-label reveal">Пространство</span>
+    <h2 class="section-title reveal">Четыре зоны под любой сценарий</h2>
+    <p class="section-intro reveal">Продуманное пространство с готовым интерьером, мебелью и приятным светом — без необходимости вкладываться в оформление.</p>
+
+    <div class="spaces-grid reveal-stagger">
+      <div class="space-card tilt">
+        <img src="images/2026-05-06%2011.12.56.jpg" alt="Закрытая беседка с террасой" loading="lazy" decoding="async">
+        <div class="overlay">
+          <h3>Закрытая беседка с террасой</h3>
+          <p>Главное пространство для банкета и торжества</p>
+        </div>
+      </div>
+      <div class="space-card tilt">
+        <img src="images/2026-05-06%2011.12.22.jpg" alt="Открытая площадка" loading="lazy" decoding="async">
+        <div class="overlay">
+          <h3>Открытая площадка</h3>
+          <p>Для welcome-зоны, активных форматов и фуршета</p>
+        </div>
+      </div>
+      <div class="space-card tilt">
+        <img src="images/2026-05-06%2011.11.54.jpg" alt="Терраса над водой" loading="lazy" decoding="async">
+        <div class="overlay">
+          <h3>Терраса над водой</h3>
+          <p>Атмосферная зона у самой воды с гирляндами</p>
+        </div>
+      </div>
+      <div class="space-card tilt">
+        <img src="images/2026-05-06%2011.12.35.jpg" alt="Двухэтажная зона отдыха" loading="lazy" decoding="async">
+        <div class="overlay">
+          <h3>Двухэтажная зона отдыха</h3>
+          <p>Камерное пространство для лаунжа и съёмок</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KITCHEN & SERVICE -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div class="col-image reveal">
+        <img src="images/2026-05-06%2011.12.51.jpg" alt="Сервировка стола" loading="lazy" decoding="async">
+      </div>
+      <div class="col-content reveal">
+        <span class="section-label">Кухня и сервис</span>
+        <h2 class="section-title">Ресторанный уровень</h2>
+        <p>Восточные и европейские блюда с подачей, соответствующей формату мероприятия — будь то камерный ужин, корпоратив или большая свадьба.</p>
+        <p><strong>Сильная команда сервиса</strong>, работающая точно, ненавязчиво и на результат. Гости чувствуют заботу, организаторы — что всё под контролем.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU (food) -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <span class="section-label reveal">Меню</span>
+    <h2 class="section-title reveal">Что мы готовим</h2>
+    <p class="section-intro reveal">Восточные и европейские блюда — от лёгких салатов до мангала и порционных горячих. Меню может быть дополнено эксклюзивными позициями вне основной карты.</p>
+
+    <div class="menu-grid reveal-stagger">
+
+      <div class="menu-category">
+        <h3>Салаты</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Салат греческий</span><span class="item-price">600 ₽</span></li>
+          <li><span class="item-name">Салат цезарь<small>с курицей</small></span><span class="item-price">690 ₽</span></li>
+          <li><span class="item-name">С сыром халуми<small>и авокадо</small></span><span class="item-price">750 ₽</span></li>
+          <li><span class="item-name">Салат с ростбифом</span><span class="item-price">850 ₽</span></li>
+          <li><span class="item-name">Салат с креветками<small>авокадо и фирменным соусом</small></span><span class="item-price">890 ₽</span></li>
+          <li><span class="item-name">Салат с лососем<small>и авокадо</small></span><span class="item-price">890 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3>Супы</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Том ям</span><span class="item-price">880 ₽</span></li>
+          <li><span class="item-name">Уха сливочная</span><span class="item-price">780 ₽</span></li>
+          <li><span class="item-name">Лагман</span><span class="item-price">750 ₽</span></li>
+          <li><span class="item-name">Шурпа с говядиной</span><span class="item-price">750 ₽</span></li>
+          <li><span class="item-name">Грибной крем-суп</span><span class="item-price">630 ₽</span></li>
+          <li><span class="item-name">Токмач<small>с мини-треугольником</small></span><span class="item-price">630 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3>Основные блюда</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Плов узбекский</span><span class="item-price">730 ₽</span></li>
+          <li><span class="item-name">Говяжьи медальоны<small>с картофелем бейби и сливочным соусом с грибами</small></span><span class="item-price">1190 ₽</span></li>
+          <li><span class="item-name">Телячьи щёчки<small>с картофельным пюре</small></span><span class="item-price">1000 ₽</span></li>
+          <li><span class="item-name">Классический бефстроганов<small>с картофельным пюре</small></span><span class="item-price">1100 ₽</span></li>
+          <li><span class="item-name">Бургер<small>с говяжьей котлетой</small></span><span class="item-price">850 ₽</span></li>
+          <li><span class="item-name">Орзо с курицей</span><span class="item-price">890 ₽</span></li>
+          <li><span class="item-name">Куриная грудка</span><span class="item-price">500 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3>Гарниры</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Дикий рис</span><span class="item-price">290 ₽</span></li>
+          <li><span class="item-name">Картофель бейби<small>с розмарином</small></span><span class="item-price">300 ₽</span></li>
+          <li><span class="item-name">Картошка по-деревенски</span><span class="item-price">300 ₽</span></li>
+          <li><span class="item-name">Картофельное пюре</span><span class="item-price">330 ₽</span></li>
+          <li><span class="item-name">Картофель фри</span><span class="item-price">270 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3>Мангал</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Шашлык куриный</span><span class="item-price">600 ₽</span></li>
+          <li><span class="item-name">Шашлык из говядины</span><span class="item-price">800 ₽</span></li>
+          <li><span class="item-name">Шашлык из баранины</span><span class="item-price">900 ₽</span></li>
+          <li><span class="item-name">Люля-кебаб из говядины</span><span class="item-price">480 ₽</span></li>
+          <li><span class="item-name">Стейк форели</span><span class="item-price">990 ₽</span></li>
+          <li><span class="item-name">Дорадо</span><span class="item-price">900 ₽</span></li>
+          <li><span class="item-name">Овощи гриль</span><span class="item-price">350 ₽</span></li>
+          <li><span class="item-name">Лангустины<small>на 6 персон</small></span><span class="item-price">2700 ₽</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <h3>Десерты &amp; напитки</h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Классический чизкейк</span><span class="item-price">490 ₽</span></li>
+          <li><span class="item-name">Медовик</span><span class="item-price">400 ₽</span></li>
+          <li><span class="item-name">Мороженое</span><span class="item-price">240 ₽</span></li>
+          <li><span class="item-name">Мохито</span><span class="item-price">450 ₽<small>1000 мл</small></span></li>
+          <li><span class="item-name">Чай<small>на выбор</small></span><span class="item-price">490 ₽<small>1000 мл</small></span></li>
+          <li><span class="item-name">Лимонад<small>цитрусовый, клубничный, малиновый</small></span><span class="item-price">470 ₽<small>1000 мл</small></span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category wide">
+        <h3>Закуски <span class="cat-note">основные позиции — на 6 персон</span></h3>
+        <ul class="menu-list">
+          <li><span class="item-name">Сырное плато</span><span class="item-price">2700 ₽</span></li>
+          <li><span class="item-name">Тарталетки с копчёным лососем</span><span class="item-price">2700 ₽</span></li>
+          <li><span class="item-name">Кампрезе<small>на хрустящем багете</small></span><span class="item-price">2500 ₽</span></li>
+          <li><span class="item-name">Тарталетки с красной икрой</span><span class="item-price">2500 ₽</span></li>
+          <li><span class="item-name">Рыбная нарезка</span><span class="item-price">2300 ₽</span></li>
+          <li><span class="item-name">Брускетты с ростбифом</span><span class="item-price">2300 ₽</span></li>
+          <li><span class="item-name">Мясное плато</span><span class="item-price">2300 ₽</span></li>
+          <li><span class="item-name">Фри-плато<small>креветки в панировке, наггетсы, картошка фри, сырные шарики, сырный соус</small></span><span class="item-price">2200 ₽</span></li>
+          <li><span class="item-name">Брускетты с красной рыбой<small>сливочным сыром и зеленью</small></span><span class="item-price">2100 ₽</span></li>
+          <li><span class="item-name">Тарталетки с жульеном</span><span class="item-price">2000 ₽</span></li>
+          <li><span class="item-name">Нежное ассорти рулетиков</span><span class="item-price">1950 ₽</span></li>
+          <li><span class="item-name">Пшеничные роллы<small>с курицей</small></span><span class="item-price">1800 ₽</span></li>
+          <li><span class="item-name">Фруктовая тарелка</span><span class="item-price">1600 ₽</span></li>
+          <li><span class="item-name">Беломорские мидии</span><span class="item-price">1290 ₽</span></li>
+          <li><span class="item-name">Ассорти овощное</span><span class="item-price">1100 ₽</span></li>
+          <li><span class="item-name">Чайный набор</span><span class="item-price">990 ₽</span></li>
+          <li><span class="item-name">Хлебная корзинка</span><span class="item-price">590 ₽</span></li>
+          <li><span class="item-name">Сэндвич с ростбифом<small>порция</small></span><span class="item-price">500 ₽</span></li>
+          <li><span class="item-name">Сэндвич с лососем<small>порция</small></span><span class="item-price">450 ₽</span></li>
+          <li><span class="item-name">Сэндвич с курицей<small>порция</small></span><span class="item-price">440 ₽</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="menu-note reveal">
+      <p><strong>В стоимость мероприятия включено полное сопровождение:</strong></p>
+      <ul>
+        <li>Персональная команда обслуживания</li>
+        <li>Подготовка пространства и деликатное сопровождение в течение всего мероприятия</li>
+        <li>Разнообразная посуда и сервировка</li>
+        <li>Текстиль на ваш выбор</li>
+        <li>Холодильник для ваших десертов и торта</li>
+        <li>Возможность привезти свой алкоголь и напитки</li>
+      </ul>
+      <p><strong>Минимальный заказ на порционные блюда</strong> — от 15 позиций. Меню может быть дополнено эксклюзивными позициями вне основной карты.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMFORT FEATURES -->
+<section class="features">
+  <div class="container">
+    <span class="section-label reveal">Комфорт гостей</span>
+    <h2 class="section-title reveal">Базовые вещи, которые<br>действительно влияют на день</h2>
+
+    <div class="features-grid reveal-stagger">
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <h3>Современные санузлы</h3>
+        <p>Чистота и комфорт уровня хорошего ресторана — не дачные удобства.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M12 2L4 7v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V7l-8-5z"/>
+        </svg>
+        <h3>Обработанная территория</h3>
+        <p>Регулярная обработка от насекомых — гости и дети чувствуют себя спокойно весь вечер.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="11" width="18" height="10" rx="1"/>
+          <path d="M5 11V7a4 4 0 014-4h6a4 4 0 014 4v4"/>
+          <circle cx="8" cy="16" r="1.2" fill="currentColor"/>
+          <circle cx="16" cy="16" r="1.2" fill="currentColor"/>
+        </svg>
+        <h3>Парковка</h3>
+        <p>Места для гостей и подрядчиков — никто не блокирует подъезд и не ищет, где встать.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIOS -->
+<section>
+  <div class="container">
+    <div class="two-col reverse">
+      <div class="col-image reveal">
+        <img src="images/2026-05-06%2011.12.17.jpg" alt="Свадебная церемония" loading="lazy" decoding="async">
+      </div>
+      <div class="col-content reveal">
+        <span class="section-label">Сценарные возможности</span>
+        <h2 class="section-title">Гибкий сценарий без ограничений</h2>
+        <p><strong>Пляжная зона и открытая территория</strong> позволяют выстраивать день так, как нужно: welcome у воды, активные форматы на открытой площадке, банкет в беседке, неформальное общение у воды.</p>
+        <p>Мероприятие не упирается в одну комнату — гости меняют локации внутри площадки и день не становится монотонным.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATION -->
+<section class="features">
+  <div class="container">
+    <div class="two-col">
+      <div class="col-image reveal">
+        <img src="images/2026-05-06%2011.12.46.jpg" alt="Территория" loading="lazy" decoding="async">
+      </div>
+      <div class="col-content reveal">
+        <span class="section-label">Размещение</span>
+        <h2 class="section-title">Событие с продолжением</h2>
+        <p><strong>9 домов и банные комплексы</strong> на территории. До <strong>72 гостей</strong> могут остаться с ночёвкой — без трансферов и логистических ограничений.</p>
+        <p>Формат «событие + продолжение»: можно собрать ближний круг, спокойно завершить вечер и продолжить на следующий день — баня, прогулка у воды, завтрак без спешки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACITY -->
+<section class="capacity">
+  <div class="container">
+    <span class="section-label reveal">Территория и вместимость</span>
+    <h2 class="section-title reveal">Презентабельный вид без доп. вложений</h2>
+    <p class="section-intro reveal" style="margin-left: auto; margin-right: auto;">Ухоженное пространство с газоном, брусчаткой и фотозонами — площадка готова к съёмке и приёму гостей в любой момент.</p>
+
+    <div class="capacity-numbers reveal-stagger">
+      <div class="capacity-item">
+        <div class="number" data-target="64">0</div>
+        <div class="label">гостя — банкет</div>
+      </div>
+      <div class="capacity-item">
+        <div class="number" data-target="80">0</div>
+        <div class="label">гостей — фуршет</div>
+      </div>
+      <div class="capacity-item">
+        <div class="number" data-target="72">0</div>
+        <div class="label">гостя — с ночёвкой</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section class="videos">
+  <div class="container">
+    <span class="section-label reveal">Видео-обзор</span>
+    <h2 class="section-title reveal">Площадка в движении</h2>
+    <p class="section-intro reveal">Нажмите на видео, чтобы посмотреть пространство со всех сторон.</p>
+
+    <div class="videos-grid reveal-stagger">
+      <div class="video-card" data-video="video/2026-05-06%2011.15.45.mp4">
+        <video muted loop playsinline preload="none">
+          <source src="video/2026-05-06%2011.15.45.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="play-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-card" data-video="video/2026-05-06%2011.15.52.mp4">
+        <video muted loop playsinline preload="none">
+          <source src="video/2026-05-06%2011.15.52.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="play-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-card" data-video="video/2026-05-06%2011.15.59.mp4">
+        <video muted loop playsinline preload="none">
+          <source src="video/2026-05-06%2011.15.59.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="play-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-card" data-video="video/2026-05-06%2011.15.37.mp4">
+        <video muted loop playsinline preload="none">
+          <source src="video/2026-05-06%2011.15.37.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="play-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <span class="section-label reveal">Атмосфера</span>
+    <h2 class="section-title reveal">Как это выглядит</h2>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.10.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.27.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.41.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.56.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.51.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.17.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.22.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="gallery-item"><img src="images/2026-05-06%2011.12.35.jpg" alt="" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-intro">
+      <span class="section-label reveal">Прайс на 2026</span>
+      <h2 class="section-title reveal">Стоимость аренды</h2>
+      <p class="section-intro reveal" style="margin-left: auto; margin-right: auto;">Цена включает аренду всей площадки с 12:00 до 00:00. Стоимость незначительно увеличивается из-за инфляции и планируемых вложений во внешний вид и комфорт площадки.</p>
+    </div>
+
+    <div class="pricing-grid reveal-stagger">
+      <div class="price-card">
+        <div class="day-label">Будни</div>
+        <h3>Понедельник — четверг</h3>
+        <ul class="price-list">
+          <li><span class="guests">до 10 чел.<sup>*</sup></span><span class="amount">20 000 ₽</span></li>
+          <li><span class="guests">до 20 чел.</span><span class="amount">35 000 ₽</span></li>
+          <li><span class="guests">до 30 чел.</span><span class="amount">45 000 ₽</span></li>
+          <li><span class="guests">до 50 чел.</span><span class="amount">60 000 ₽</span></li>
+          <li><span class="guests">до 70 чел.</span><span class="amount">80 000 ₽</span></li>
+          <li><span class="guests">до 100 чел.</span><span class="amount">индивидуально</span></li>
+        </ul>
+      </div>
+
+      <div class="price-card featured">
+        <div class="day-label">Выходные и праздники</div>
+        <h3>Пятница и суббота</h3>
+        <ul class="price-list">
+          <li><span class="guests">до 30 чел.</span><span class="amount">65 000 ₽</span></li>
+          <li><span class="guests">до 50 чел.</span><span class="amount">80 000 ₽</span></li>
+          <li><span class="guests">до 70 чел.</span><span class="amount">100 000 ₽</span></li>
+          <li><span class="guests">до 100 чел.</span><span class="amount">индивидуально</span></li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <div class="day-label">Воскресенье</div>
+        <h3>Спокойный день</h3>
+        <ul class="price-list">
+          <li><span class="guests">до 30 чел.</span><span class="amount">50 000 ₽</span></li>
+          <li><span class="guests">до 50 чел.</span><span class="amount">65 000 ₽</span></li>
+          <li><span class="guests">до 70 чел.</span><span class="amount">85 000 ₽</span></li>
+          <li><span class="guests">до 100 чел.</span><span class="amount">индивидуально</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-note reveal">
+      <p><sup>*</sup> Тариф «до 10 человек» доступен при бронировании не ранее чем за 3 дня.</p>
+      <p><strong>Время работы:</strong> с 12:00 до 00:00. Продление в ночное время — 10% от стоимости за каждый час.</p>
+      <p><strong>Учёт гостей:</strong> приглашённые подрядчики, дети и ваш персонал учитываются в общем количестве человек.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-content">
+    <h2 class="reveal">Готовы обсудить ваше мероприятие?</h2>
+    <p class="reveal">Расскажите о формате, дате и количестве гостей — подберём оптимальный сценарий и ответим на все вопросы.</p>
+    <div class="contact-buttons reveal">
+      <a href="tel:+79370000188" class="phone-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        8 937 000 01 88
+      </a>
+      <a href="https://t.me/besedkanavolge" target="_blank" rel="noopener" class="tg-link">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+        </svg>
+        @besedkanavolge
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>БЕСЕДКА НА ВОЛГЕ &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <a href="https://t.me/besedkanavolge" target="_blank" rel="noopener">Telegram</a> &nbsp;·&nbsp; <a href="tel:+79370000188">8 937 000 01 88</a></p>
+</footer>
+
+<!-- Inline logo data URI (so WebGL can use it as a texture even via file://) -->
+<script src="logo-data.js"></script>
+
+<!-- Three.js module mapping -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<script src="main.js" defer></script>
+
+</body>
+</html>
